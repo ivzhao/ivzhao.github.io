@@ -11,13 +11,17 @@
 body {
     width: 980px;
     margin: 0 auto;
-    padding: 72px 0 0;
+    padding: 90px 0 0;
     font-size: 17px;
-    font-family: 'MinionProRegular', sans-serif;
+    font-family: 'MinionProRegular', Georgia, serif;
     font-weight: normal;
     font-style: normal;
     font-size-adjust: 0.44;
     line-height: 2;
+}
+
+p {
+    color: #D6D6D6;
 }
 
 #intro, #about_contact {
