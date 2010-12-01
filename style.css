@@ -1,3 +1,49 @@
 /* http://yui.yahooapis.com/3.0.0/build/cssreset/reset-min.css */ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
 
+@font-face {
+	font-family: 'MinionProRegular';
+	src: url('./font/minionpro-regular-webfont.eot');
+	src: local('☺'), url('./font/minionpro-regular-webfont.woff') format('woff'), url('./font/minionpro-regular-webfont.ttf') format('truetype'), url('./font/minionpro-regular-webfont.svg#webfontLMFKzVKf') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
+body {
+    width: 980px;
+    margin: 0 auto;
+    padding: 72px 0 0;
+    font-size: 17px;
+    font-family: 'MinionProRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size-adjust: 0.44;
+    line-height: 2;
+}
+
+#intro, #about_contact {
+    width: 400px;
+}
+#intro {
+}
+#intro #logo { margin: 12px 0; }
+#intro h1 { font-size: 22px; }
+
+#about_contact {
+    margin: 36px 0;
+}
+#about_contact h2 {
+    margin: 12px 0;
+    font: 10px "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", "MS Sans Serif", Verdana, Arial, sans-serif; 
+}
+
+#projects {
+    float: right;
+    width: 510px;
+}
+#projects li {
+    padding: 12px 0;
+    border-bottom: 1px solid #EEE;
+}
+#projects li:first-child { border-top: 1px solid #EEE; }
+#projects li.img_float_left img { float: left; }
+#projects li.img_float_right img { float: right; }
