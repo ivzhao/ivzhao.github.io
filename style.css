@@ -1,18 +1,30 @@
 /* http://yui.yahooapis.com/3.0.0/build/cssreset/reset-min.css */ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
 
 @font-face {
-	font-family: 'MinionProRegular';
-	src: url('./font/minionpro-regular-webfont.eot');
-	src: local('☺'), url('./font/minionpro-regular-webfont.woff') format('woff'), url('./font/minionpro-regular-webfont.ttf') format('truetype'), url('./font/minionpro-regular-webfont.svg#webfontLMFKzVKf') format('svg');
+    font-family: 'MinionProRegular';
+    src: url('./font/minionpro-regular-webfont.eot');
+    src: local('☺'), url('./font/minionpro-regular-webfont.woff') format('woff'), url('./font/minionpro-regular-webfont.ttf') format('truetype'), url('./font/minionpro-regular-webfont.svg#webfontLMFKzVKf') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'MinionProItalic';
+	src: url('./font/minionpro-it-webfont.eot');
+	src: local('☺'), url('./font/minionpro-it-webfont.woff') format('woff'), url('./font/minionpro-it-webfont.ttf') format('truetype'), url('./font/minionpro-it-webfont.svg#webfontTSzmlB8O') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
+html { min-width: 1080px; }
+
 body {
-    width: 980px;
+    position: relative;
+    left: 12px;
+    width: 1008px;
     margin: 0 auto;
-    padding: 90px 0 0;
-    font-size: 17px;
+    padding: 90px 0 48px;
+    font-size: 15px;
     font-family: 'MinionProRegular', Georgia, serif;
     font-weight: normal;
     font-style: normal;
@@ -20,34 +32,93 @@ body {
     line-height: 2;
 }
 
-p {
-    color: #D6D6D6;
+i {
+    font-family: MinionProItalic, Georgia, serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size-adjust: 0.44;
 }
 
-#intro, #about_contact {
-    width: 400px;
-}
-#intro {
-}
-#intro #logo { margin: 12px 0; }
+a { text-decoration: none; }
+a:hover { opacity: 0.8; }
+
+em { color: #333; }
+#about, #projects li { color: #D6D6D6; }
+
+#intro, #about_contact { width: 400px; }
+
 #intro h1 { font-size: 22px; }
 
-#about_contact {
-    margin: 36px 0;
+#about_contact { margin: 28px 0; }
+#about_contact #logo { 
+    float: left;
+    margin: 10px 20px 0 6px; 
 }
 #about_contact h2 {
-    margin: 12px 0;
-    font: 10px "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", "MS Sans Serif", Verdana, Arial, sans-serif; 
+    float: left;
+    margin: 12px 0 6px;
+    padding-bottom: 6px;
+    font-size: 13px;
+/*    text-transform: uppercase;*/
+    letter-spacing: 1px;
+    border-bottom: 1px solid #EEE;
 }
+#about { 
+    clear: left;
+    margin: 0 0 28px;
+    font-size: 15px; 
+}
+#about p { margin-bottom: 1em; }
+
+#contact a {
+    color: #FF5F4D;
+}
+
 
 #projects {
     float: right;
-    width: 510px;
+    position: relative;
+    top: -12px;
+    width: 530px;
 }
 #projects li {
-    padding: 12px 0;
-    border-bottom: 1px solid #EEE;
+    padding: 16px 0;
+    border-bottom: 1px solid #F2F2F2;
 }
 #projects li:first-child { border-top: 1px solid #EEE; }
-#projects li.img_float_left img { float: left; }
-#projects li.img_float_right img { float: right; }
+#projects li.thumb_left .thumb { 
+    float: left; 
+    padding-left: 0;
+}
+#projects li.thumb_right .thumb { 
+    float: right; 
+    padding-right: 0;
+}
+
+#projects li .thumb {
+    position: relative; 
+    padding: 6px; 
+ }
+#projects li .thumb:hover { cursor: pointer; }
+#projects li .thumb:hover img {
+    position: relative;
+    top: 1px;
+}
+#projects li .thumb .tooltip { 
+    display: none;
+    position: absolute;
+    width: 160px;
+    padding: 6px 10px;
+    background: #111;
+    background: rgba(0, 0, 0, 0.75);
+    color: #FFF;
+    font: 10px "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", "MS Sans Serif", Verdana, Arial, sans-serif; 
+    line-height:1.5em;
+    z-index: 999;
+}
+#projects li .thumb .tooltip .arrow {
+    position: absolute;
+    top: -10px;
+    left: 45%;
+    opacity: 0.75;
+}
