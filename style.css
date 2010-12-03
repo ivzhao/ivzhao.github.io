@@ -39,33 +39,34 @@ i {
     font-size-adjust: 0.44;
 }
 
-a { text-decoration: none; }
-a:hover { opacity: 0.8; }
+/*a { text-decoration: none; }*/
 
 em { color: #333; }
 #about, #projects li { color: #D6D6D6; }
 
-#intro, #about_contact { width: 400px; }
-
+#intro { width: 400px; }
 #intro h1 { font-size: 22px; }
 
-#about_contact { margin: 28px 0; }
+#about_contact { 
+    width: 450px;
+    margin: 28px 0; 
+}
 #about_contact #logo { 
     float: left;
     margin: 10px 20px 0 6px; 
 }
 #about_contact h2 {
     float: left;
-    margin: 12px 0 6px;
-    padding-bottom: 6px;
+    margin: 12px 0 8px;
+    padding-bottom: 8px;
     font-size: 13px;
-/*    text-transform: uppercase;*/
     letter-spacing: 1px;
     border-bottom: 1px solid #EEE;
 }
 #about { 
     clear: left;
     margin: 0 0 28px;
+    padding-right: 60px; /* for mouseenter */
     font-size: 15px; 
 }
 #about p { margin-bottom: 1em; }
@@ -82,8 +83,8 @@ em { color: #333; }
     width: 530px;
 }
 #projects li {
-    padding: 16px 0;
-    border-bottom: 1px solid #F2F2F2;
+    padding: 16px 0 12px;
+    border-bottom: 1px solid #EEE;
 }
 #projects li:first-child { border-top: 1px solid #EEE; }
 #projects li.thumb_left .thumb { 
@@ -107,7 +108,8 @@ em { color: #333; }
 #projects li .thumb .tooltip { 
     display: none;
     position: absolute;
-    width: 160px;
+    bottom: -36px; 
+    width: 140px;
     padding: 6px 10px;
     background: #111;
     background: rgba(0, 0, 0, 0.75);

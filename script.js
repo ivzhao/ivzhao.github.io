@@ -4,7 +4,7 @@ $(document).ready(function(){
         if (e.type == 'mouseenter') {
             $(this).animate({'color': '#333'}, 100, 'linear');
         } else {
-            $(this).animate({'color': '#D6D6D6'}, 200, 'linear');
+            $(this).animate({'color': '#D6D6D6'}, 300, 'linear');
         }
     })
 
