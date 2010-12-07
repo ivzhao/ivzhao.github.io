@@ -44,9 +44,11 @@ i {
 }
 
 a { text-decoration: none; }
+a.text_link:hover { opacity: 0.8; }
 
 em { color: #333; }
-#about, #projects li { color: #D6D6D6; }
+#about, #projects li, #projects li a { color: #D6D6D6; }
+#projects li a#threewiki, #projects li a#vittyo { color: #333; }
 
 #intro { width: 400px; }
 #intro h1 { font-size: 22px; }
@@ -76,6 +78,8 @@ em { color: #333; }
 #about p { margin-bottom: 1em; }
 
 #contact {
+    position: relative;
+    left: -16px;
     width: 370px;
     padding: 14px 12px 20px;
     background: #FFFFEE;
@@ -113,12 +117,11 @@ em { color: #333; }
 #projects li .thumb {
     position: relative; 
     padding: 8px 8px 6px; 
- }
-#projects li .thumb:hover { cursor: pointer; }
-#projects li .thumb:hover img {
-    position: relative;
-    top: 1px;
 }
+#projects li .thumb:hover { cursor: pointer; }
+#projects li .thumb img { position: relative; }
+#projects li .thumb:hover img { top: 1px; }
+
 #projects li .thumb .tooltip { 
     display: none;
     position: absolute;

@@ -1,20 +1,38 @@
+
 $(document).ready(function(){
 
     $('#about, #projects li').live('mouseenter mouseleave', function(e) {
+        var link = $(this).find('.text_link');
+
+        var duration, textColor, linkColor;
         if (e.type == 'mouseenter') {
-            $(this).animate({'color': '#333'}, 100, 'linear');
+            duration = 100;
+            textColor = '#333';
+            linkColor = '#FF5F4D';
+            linkDecoration = 'underline';
         } else {
-            $(this).animate({'color': '#D6D6D6'}, 300, 'linear');
+            duration = 240;
+            textColor = '#D6D6D6';
+            linkColor = (link.closest('em').length > 0) ? '#333' : '#D6D6D6';
+            linkDecoration = 'none';
         }
+
+        $(this).animate({'color': textColor}, duration, 'linear');
+        link.animate({'color': linkColor}, duration, 'linear');
+        link.css('text-decoration', linkDecoration);
     })
 
-    $('.thumb').live('mouseenter mouseleave', function(e) {
-        var toolTip = $(this).children('.tooltip');
-        if (e.type == 'mouseenter') {
-            toolTip.fadeIn(160);
-        } else {
-            toolTip.fadeOut(200);
-        }
+    $('.thumb').bind('mouseenter mouseleave', function(e) {
+        var duration = (e.type == 'mouseenter') ? 160: 300;
+        var opacity = (e.type == 'mouseenter') ? 1.0: 0.0;
+        $(this).children('.tooltip').fadeTo(duration, opacity);
+    });
+
+    $('.text_link').live('mouseenter mouseleave', function(e) {
+        var thumb = $('#'+$(this).attr('id')+'_thumb');
+        var positionTop = (e.type == 'mouseenter') ? 1 : 0;
+        thumb.trigger(e.type);
+        thumb.children('img').css('top', positionTop);
     });
 
     $.getJSON('http://twitter.com/status/user_timeline/ivanhzhao.json?count=1&callback=?', 
