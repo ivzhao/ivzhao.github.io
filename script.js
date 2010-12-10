@@ -7,13 +7,13 @@ $(document).ready(function(){
         var duration, textColor, linkColor;
         if (e.type == 'mouseenter') {
             duration = 100;
-            textColor = '#333';
+            textColor = '#111';
             linkColor = '#FF5F4D';
             linkDecoration = 'underline';
         } else {
             duration = 240;
-            textColor = '#D6D6D6';
-            linkColor = (link.closest('em').length > 0) ? '#333' : '#D6D6D6';
+            textColor = '#BBB';
+            linkColor = (link.closest('em').length > 0) ? '#111' : '#BBB';
             linkDecoration = 'none';
         }
 
@@ -26,6 +26,7 @@ $(document).ready(function(){
         var duration = (e.type == 'mouseenter') ? 160: 300;
         var opacity = (e.type == 'mouseenter') ? 1.0: 0.0;
         $(this).children('.tooltip').fadeTo(duration, opacity);
+        if (e.type == 'mouseleave') $(this).children('.tooltip').css('display', 'none');
     });
 
     $('.text_link').live('mouseenter mouseleave', function(e) {
