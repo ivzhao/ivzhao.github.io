@@ -50,11 +50,11 @@ em { color: #000; }
 #about, #projects li, #projects li a { color: #BBB; }
 #projects li a#threewiki, #projects li a#vittyo { color: #333; }
 
-#intro { width: 400px; }
+#intro { width: 350px; }
 #intro h1 { font-size: 22px; }
 
 #about_contact { 
-    width: 450px;
+    width: 420px;
     margin: 28px 0; 
 }
 #about_contact #logo { 
@@ -98,7 +98,7 @@ em { color: #000; }
     float: right;
     position: relative;
     top: -12px;
-    width: 530px;
+    width: 560px;
 }
 #projects li {
     padding: 16px 0 12px;
