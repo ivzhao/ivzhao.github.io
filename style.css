@@ -58,7 +58,7 @@ p, a {
 body {
     width: 90%;
     max-width: 1034px;
-    margin: 64px auto 32px;
+    margin: 72px auto 32px;
     font-size: 16px;
     font-family: 'MinionProRegular', Georgia, serif;
     font-weight: normal;
@@ -129,18 +129,6 @@ h1 {
     color: #AAA;
 }
 
-.intro:hover,
-.projects li:hover {
-    color: black;
-}
-
-.intro:not(:hover) a,
-.projects li:not(:hover) a {
-    color: #AAA;
-    text-decoration: none;
-}
-
-
 .thumb {
     position: relative;
     margin: 0.75em 1.25em;
@@ -187,11 +175,11 @@ h1 {
     position: absolute;
     top: 103%;
     left: 50%;
-    width: 10em;
-    margin-left: -5em;
+    width: 14em;
+    margin-left: -7em;
     padding: 0.5em;
     font-family: "Lucida Grande", Verdana, Arial, sans-serif; 
-    font-size: 0.875em;
+    font-size: 0.6875em;
     color: #FFF;
     background: #111;
     background: rgba(0, 0, 0, 0.75);
@@ -212,6 +200,36 @@ h1 {
     border-right: 7px solid transparent;
     border-bottom: 6px solid rgba(0, 0, 0, 0.75);
 }
+
+
+/* For non-touch devices */
+
+html.no-touch .intro:hover,
+html.no-touch .projects li:hover {
+    color: black;
+}
+
+html.no-touch .intro:not(:hover) a,
+html.no-touch .projects li:not(:hover) a {
+    color: #AAA;
+    text-decoration: none;
+}
+
+
+
+/* For touch devices */
+
+html.touch em {
+    color: inherit;
+}
+
+html.touch .intro a.text-link,
+html.touch .projects li a.text-link {
+    color: #FF5F4D;
+    text-decoration: underline;
+}
+
+
 
 @media only screen and (max-device-width: 920px),
 only screen and (max-width: 920px) {

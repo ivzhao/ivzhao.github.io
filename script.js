@@ -1,29 +1,32 @@
 $(document).ready(function(){
 
-  $('.thumb').on('mouseenter', function(e) {
-    $(this).addClass('entered');
-    var poptip = $(this).data('poptip');
-    if (poptip) $(this).append('<div class="poptip">' + poptip + '</div>');
-  });
+  if ($('html').hasClass('no-touch')) {
 
-  $('.thumb').on('mouseleave', function(e) {
-    $(this).removeClass('entered');
-    $(this).find('.poptip').remove();
-  });
+    $('.thumb').on('mouseenter', function(e){
+      $(this).addClass('entered');
+      var poptip = $(this).data('poptip');
+      if (poptip) $(this).append('<div class="poptip">' + poptip + '</div>');
+    });
 
-  $('a').on('mouseenter mouseleave', function(e){
-    var thumbClass = $(this).data('thumb-class');
-    if (thumbClass) $('.' + thumbClass).trigger(e.type);
-  });
+    $('.thumb').on('mouseleave', function(e){
+      $(this).removeClass('entered');
+      $(this).find('.poptip').remove();
+    });
 
-  $.getJSON('http://twitter.com/status/user_timeline/ivanhzhao.json?count=1&callback=?', 
+    $('a').on('mouseenter mouseleave', function(e){
+      var thumbClass = $(this).data('thumb-class');
+      if (thumbClass) $('.' + thumbClass).trigger(e.type);
+    });
+  }
+
+  $.getJSON('http://search.twitter.com/search.json?callback=?&q=from:ivanhzhao', 
     function(response){
-      if (response && response.length > 0) {
-        var lastTweet = response[0].text;
-        var timeParts = response[0].created_at.split(' ');
+      if (response && response.results && response.results.length > 0) {
+        var lastTweet = response.results[0].text;
+        var timeParts = response.results[0].created_at.split(' ');
         var timeDate = timeParts[1] + ' ' + timeParts[2];
-        $('#last_tweet').text(lastTweet);
-        $('#last_tweet_date').text(timeDate);
+        $('.last-tweet').text(lastTweet);
+        $('.last-tweet-date').text(timeDate);
       }
     });
 
