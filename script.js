@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
     $('#about, #projects li').live('mouseenter mouseleave', function(e) {
-        var link = $(this).find('.text_link');
+        var link = $(this).find('.text-link');
 
         var duration, textColor, linkColor;
         if (e.type == 'mouseenter') {
@@ -29,7 +29,7 @@ $(document).ready(function(){
         if (e.type == 'mouseleave') $(this).children('.tooltip').css('display', 'none');
     });
 
-    $('.text_link').live('mouseenter mouseleave', function(e) {
+    $('.text-link').live('mouseenter mouseleave', function(e) {
         var thumb = $('#'+$(this).attr('id')+'_thumb');
         var positionTop = (e.type == 'mouseenter') ? 1 : 0;
         thumb.trigger(e.type);
