@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
     $('#about, #projects li').live('mouseenter mouseleave', function(e) {

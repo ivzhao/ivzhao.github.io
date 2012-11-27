@@ -35,6 +35,11 @@ body {
     font-size-adjust: 0.44;
     line-height: 2;
 }
+body::after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
 i {
     font-family: MinionProItalic, Georgia, serif;
@@ -124,7 +129,7 @@ em { color: #000; }
     background: #111;
     background: rgba(0, 0, 0, 0.75);
     color: #FFF;
-    font: 10px "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", "MS Sans Serif", Verdana, Arial, sans-serif; 
+    font: 10px "Lucida Grande", Verdana, Arial, sans-serif; 
     line-height:1.5em;
     z-index: 999;
 }
