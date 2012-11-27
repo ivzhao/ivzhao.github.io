@@ -71,6 +71,7 @@ body {
     display: box;
     display: -o-box;
     display: -ms-box;
+    display: -ms-flexbox;
     display: -moz-box;
     display: -webkit-box;
 }
@@ -279,7 +280,7 @@ only screen and (max-width: 600px) {
     }
 
     .projects li {
-        border-top: 2px solid #F8F8F8;
+        border-top: 2px solid #EEE;
     }
 
     .photography img,
